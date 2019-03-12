@@ -1,0 +1,263 @@
+* {margin: 0; padding: 0;}
+
+.tree ul {    
+    position: relative;	
+	transition: all 0.5s;
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+}
+
+.board-inner-drop {
+    padding-top: 80px; 
+}
+
+.board-inner-drop li {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.tree li {
+    text-align: center;
+	list-style-type: none;
+	position: relative;
+    padding-top: 80px;
+    display: inline-block;
+    vertical-align: top;
+	
+	transition: all 0.5s;
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+}
+
+/*We will use ::before and ::after to draw the connectors*/
+
+.tree li::before, .tree li::after{
+	content: '';
+    position: absolute; 
+    top: 0; 
+    right: 50%;
+	border-top: 2px solid #ccc;
+    width: 50%; 
+    height: 80px;
+}
+.tree li::after{
+    right: auto; 
+    left: 50%;
+	border-left: 2px solid #ccc;
+}
+
+/*We need to remove left-right connectors from elements without 
+any siblings*/
+.tree li:only-child::after, .tree li:only-child::before {
+	display: none;
+}
+
+/*Remove space from the top of single children*/
+.tree li:only-child{ padding-top: 0;}
+
+/*Remove left connector from first child and 
+right connector from last child*/
+.tree li:first-child::before, .tree li:last-child::after{
+	border: 0 none;
+}
+/*Adding back the vertical connector to the last nodes*/
+.tree li:last-child::before{
+	border-right: 2px solid #ccc;
+	border-radius: 0 5px 0 0;
+	-webkit-border-radius: 0 5px 0 0;
+	-moz-border-radius: 0 5px 0 0;
+}
+.tree li:first-child::after{
+	border-radius: 5px 0 0 0;
+	-webkit-border-radius: 5px 0 0 0;
+	-moz-border-radius: 5px 0 0 0;
+}
+
+/*Time to add downward connectors from parents*/
+.tree ul ul::before{
+	content: '';
+    position: absolute; 
+    top: 0; 
+    left: 50%;
+	border-left: 2px solid #ccc;
+    width: 0; 
+    height: 80px;
+}
+
+.tree li a{
+	border: 2px solid #ccc;
+	padding: 5px 10px;
+	text-decoration: none;
+	color: #666;
+	font-family: arial, verdana, tahoma;
+	font-size: 11px;
+	display: inline-block;
+	
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	
+	transition: all 0.5s;
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+}
+
+/*Time for some hover effects*/
+/*We will apply the hover effect the the lineage of the element also*/
+.tree li a:hover, .tree li a:hover+ul li a {
+	background: #c8e4f8; color: #000; border: 2px solid #94a0b4;
+}
+/*Connector styles on hover*/
+.tree li a:hover+ul li::after, 
+.tree li a:hover+ul li::before, 
+.tree li a:hover+ul::before, 
+.tree li a:hover+ul ul::before{
+	border-color:  #94a0b4;
+}
+
+.mile-title {
+    font-size: 18px;
+    color: #7380D9;
+    margin-bottom: 5px;
+    display: inline-block;
+}
+
+.board-title {
+    color: #00ACEF;
+    font-size: 15px;
+}
+
+.milestone-row-style .box-col {
+    padding: 20px;
+}
+
+.milestone-row-style .ds-color-boxes {
+    -webkit-box-shadow: -5px 0 0 0 #7380D9;
+    -moz-box-shadow: -5px 0 0 0 #7380D9;
+    box-shadow: -5px 0 0 0 #7380D9;
+}
+
+.milestone-row-style .ds-color-boxes .th-box-setting i {
+    padding: 5px;
+    background-color: #7380D9;
+    font-size: 18px;
+    border-radius: 50%;
+}
+
+.scroll-boards {
+    display: flex;
+    overflow-x: scroll;
+}
+
+.scroll-boards::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: #F5F5F5;
+}
+
+.scroll-boards::-webkit-scrollbar
+{
+    height: 10px;
+	background-color: #F5F5F5;
+}
+
+.scroll-boards::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: rgb(67, 176, 219);
+}
+
+.scroll-boards::-webkit-scrollbar-thumb:hover
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #00ACEF;
+}
+
+.board-flow-style {
+    width: 1000px;
+    -ms-transform: translate(-50%, 0); /* IE 9 */
+    -webkit-transform: translate(-50%, 0); /* Safari */
+    transform: translate(-50%, 0);
+    margin-left: 50%;
+}
+
+.board-flow-style .b-first-li {
+    width: 1000px;
+}
+
+.board-flow-style .ds-color-boxes {
+    width: 200px;
+    text-align: center;
+    padding: 15px;
+    min-height: 90px;
+    display: flex;
+    align-items: center;
+    cursor: auto;
+    -webkit-box-shadow: -5px 0 0 0 #00ACEF;
+    -moz-box-shadow: -5px 0 0 0 #00ACEF;
+    box-shadow: -5px 0 0 0 #00ACEF;
+}
+
+.milestone-box {
+    min-height: 110px;
+}
+
+.board-flow-style .ds-color-boxes .cb-head {
+    font-size: 16px;
+}
+
+.milestone-box .cb-head {
+    font-size: 18px;
+}
+
+.slick-next, .slick-prev {
+    top: 6%;
+    color: #222222;
+    padding: 10px;
+}
+
+.milestone-row-style .slick-next, .milestone-row-style .slick-prev {
+    top: 95px;
+}
+
+.milestone-row-style .slick-next::before, .milestone-row-style .slick-prev::before {
+    color: #3B86FF;
+}
+
+.milestone-row-style .slick-slide .tree {
+    display: none;
+}
+
+.milestone-row-style .slick-slide.slick-current .tree {
+    display: block;
+}
+
+.milestone-row-style .slick-next {
+    padding-right: 25px;
+}
+
+.milestone-row-style .slick-prev {
+    padding-left: 5px;
+}
+
+.obj-round-count span {
+    border: solid 3px #00ACEF;
+    width: 100%;
+    height: 55px;
+    display: inline-block;
+    max-width: 55px;    
+    border-radius: 50%;
+    line-height: 47px;
+    color: #222;
+    font-size: 15px;
+}
+
+.obj-round-count h4 {
+    color: #00ACEF;
+    font-size: 17px;
+    margin-top: 15px;
+    font-weight: 400;
+}

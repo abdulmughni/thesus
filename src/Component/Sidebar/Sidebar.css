@@ -1,0 +1,31 @@
+.crm-sidebar {
+    background: #ffffff;
+}
+
+.crm-sidebar.ant-layout-sider-collapsed .ant-menu-item {
+    padding: 8px 19px !important;
+}
+
+.crm-sidebar .ant-menu {
+    padding-top: 10px;
+}
+
+.crm-sidebar .ant-menu-item, .crm-sidebar .ant-menu-submenu-title {
+    font-size: 20px !important;
+    padding: 10px 10px 10px 25px !important;
+    height: auto !important;
+}
+
+.crm-sidebar .ant-menu-item-selected, .crm-sidebar .ant-menu-item:hover {
+    color: #3495F0;
+    background: transparent !important;
+    border-right: 0;
+}
+
+.crm-sidebar .ant-menu-item:after {
+    border: 0 !important;
+}
+
+.crm-sidebar .ant-menu-item img {
+    margin-right: 20px;
+}

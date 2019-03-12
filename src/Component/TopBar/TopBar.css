@@ -1,0 +1,73 @@
+.crm-header {
+    background: #ffffff !important;
+    border-bottom: solid 1px #cccccc;
+    height: auto !important;
+    padding: 15px 20px !important;
+    display: table;
+    width: 100%;
+}
+
+.crm-header .row-middle {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.crm-header .logo {
+    width: 290px;
+}
+
+.crm-header .anticon {
+    vertical-align: middle;
+}
+
+.topbar-profile {
+    text-align: right;
+}
+
+.topbar-profile .ant-badge {
+    margin-right: 20px;
+}
+
+.topbar-profile .ant-badge i {
+    color: #bcbccb;
+    font-size: 26px;
+    cursor: pointer;
+}
+
+.topbar-profile .ant-badge i:hover {
+    color: #aaaaaa;
+}
+
+.topbar-profile .ant-badge sup {
+    position: absolute;
+    top: 20px;
+}
+
+.crm-header .ant-breadcrumb {
+    font-size: 26px;
+}
+
+.collapse-bar {
+    font-size: 30px;
+    color: #5b5b5b;
+}
+
+.profile-user {
+    float: right;
+    padding: 2px 15px;
+    border-left: solid 1px #f4f4f4;
+}
+
+.profile-user .ant-card-meta-title {
+    font-size: 16px;
+    color: rgb(114, 114, 114);
+}
+
+.profile-user .ant-avatar {
+    width: 40px;
+    height: 40px;
+}
+
+.profile-user .ant-card-meta {
+    cursor: pointer;
+}
